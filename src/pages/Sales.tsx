@@ -1,12 +1,12 @@
-import Details from "../components/Details";
-import Header from "../components/Header";
+import Details from "../components/pages/Details";
+import Header from "../components/pages/Header";
 
 const Sales = () => {
   return (
-    <>
+    <div className="w-100">
       <Header />
       <Details />
-    </>
+    </div>
   );
 };
 
