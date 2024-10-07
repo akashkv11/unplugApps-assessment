@@ -7,3 +7,8 @@ export type DetailsDataTypes = {
   qty: number;
   rate: number;
 };
+
+export type TableDataType = DetailsDataTypes & {
+  key: React.Key;
+  amount: number;
+};
