@@ -17,7 +17,7 @@ const Header: React.FC<props> = ({ form, formOnFinish }) => {
     >
       <div className="row m-0 p-0">
         {headerFields.map((field, index) => (
-          <div className={index === 3 ? "col-6" : "col-3"} key={field.name}>
+          <div className={index >= 3 ? "col-6" : "col-4"} key={field.name}>
             <Form.Item
               name={field.name}
               label={field.label}
