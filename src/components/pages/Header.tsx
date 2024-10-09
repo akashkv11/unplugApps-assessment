@@ -23,7 +23,7 @@ const Header: React.FC<props> = ({ form, formOnFinish }) => {
               label={field.label}
               rules={field.rules}
             >
-              {<field.component />}
+              <field.component />
             </Form.Item>
           </div>
         ))}

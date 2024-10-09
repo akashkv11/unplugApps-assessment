@@ -13,6 +13,9 @@ type props = {
 
 const Details: React.FC<props> = ({ data, setTableData }) => {
   const [items, setItems] = useState<SelectProps["options"]>([]);
+  const [itemMaster, setItemMaster] = useState<
+    { item_code: string; item_name: string }[]
+  >([]);
 
   useEffect(() => {
     fetchItems();
@@ -22,6 +25,7 @@ const Details: React.FC<props> = ({ data, setTableData }) => {
     try {
       const response = await api.get("item");
       if (response.status === 200) {
+        setItemMaster(response?.data);
         setItems(
           response?.data?.map((item: any) => ({
             label: item.item_code,
@@ -48,8 +52,8 @@ const Details: React.FC<props> = ({ data, setTableData }) => {
     let amount = qty * rate;
 
     let itemName =
-      (items?.find((item) => item.value === record.item_code)
-        ?.value as string) || "";
+      itemMaster?.find((item) => item.item_code === record.item_code)
+        ?.item_name || "";
 
     if (!record?.item_code) {
       amount = 0;

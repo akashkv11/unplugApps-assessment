@@ -22,7 +22,7 @@ const Sales = () => {
     const detail_table = tableData?.length
       ? tableData?.map((item) => {
           return {
-            description: item.description,
+            description: item.item_name,
             item_code: item.item_code,
             item_name: item.item_name,
             qty: item.qty,
@@ -69,11 +69,12 @@ const Sales = () => {
 
   return (
     <>
-      <h3 className="text-black">Header</h3>
       <div className="d-flex gap-4" style={{ minHeight: "80dvh" }}>
         <div className="w-100">
+          <h3 className="text-black">Header</h3>
           <Header form={form} formOnFinish={formOnFinish} />
           <Divider />
+          <h3 className="text-black">Details</h3>
           <Details data={tableData} setTableData={setTableData} />
         </div>
         <div className="d-flex flex-column gap-2 justify-content-center ">

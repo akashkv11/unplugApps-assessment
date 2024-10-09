@@ -58,7 +58,7 @@ const headerFields: FormFieldTypes = [
         message: "Please enter Account Amount",
       },
     ],
-    component: TextInput,
+    component: NumberInput,
   },
 ];
 
